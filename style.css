@@ -1,0 +1,244 @@
+/* --- MODERN DARK THEME VARIABLES --- */
+:root {
+    --bg-main: #0b1120;
+    --bg-secondary: #111827;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --accent-color: #6d28d9;
+    --card-bg: rgba(31, 41, 55, 0.4);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* --- GLOBAL STYLES & RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: -1.5px; line-height: 1.2; }
+h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 20px; font-weight: 700; letter-spacing: -0.5px; }
+p { color: var(--text-muted); margin-bottom: 25px; font-size: 1.15rem; }
+
+/* The stunning gradient text effect for your name */
+.highlight {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* --- NAVIGATION (FROSTED GLASS) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(11, 17, 32, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text-main);
+    margin-left: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #a78bfa;
+}
+
+/* --- HERO SECTION --- */
+#hero {
+    padding: 160px 0 100px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+#hero h2 {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* --- BUTTONS --- */
+.social-links { margin-top: 40px; display: flex; gap: 15px; flex-wrap: wrap; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--accent-gradient);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: none;
+}
+
+/* --- LAYOUT & SECTIONS --- */
+section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+.alt-bg { background-color: var(--bg-secondary); }
+
+/* --- PROJECT CARDS --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+}
+
+.card h3 { font-size: 1.4rem; margin-bottom: 15px; margin-top: 0; color: #fff; }
+.card p { font-size: 1rem; margin-bottom: 20px; flex-grow: 1; }
+.card small { 
+    display: inline-block; 
+    padding: 5px 12px; 
+    background: rgba(59, 130, 246, 0.15); 
+    color: #93c5fd; 
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    margin-bottom: 20px;
+}
+.card a { 
+    color: #a78bfa; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
+.card a:hover { gap: 10px; color: #c4b5fd; }
+
+/* --- TIMELINE / ACHIEVEMENTS --- */
+.timeline { list-style: none; position: relative; }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: calc(100% - 10px);
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    box-shadow: 0 0 10px #8b5cf6;
+}
+
+.timeline strong {
+    color: #fff;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* --- FOOTER --- */
+footer { padding: 100px 0; text-align: center; background-color: var(--bg-main); }
+footer h2 { margin-top: 0; }
+footer .btn { margin-top: 20px; }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .social-links { flex-direction: column; width: 100%; }
+    .btn { text-align: center; }
+    .links { display: none; /* Hide nav links on mobile for cleaner look */ }
+    #hero { padding: 120px 0 60px; min-height: auto; }
+}
